@@ -2,7 +2,7 @@
 
 Kardex e inventario **gratis** para tu negocio. Funciona sin internet y tus datos se quedan en tu computadora.
 
-**Descarga:** [ricardoeb2209.github.io/merxa](https://ricardoeb2209.github.io/merxa) o en [Versiones](https://github.com/RicardoEb2209/merxa/releases/latest).
+**Descarga:** [ricardoeb2209.github.io/merxa](https://ricardoeb2209.github.io/merxa) o directo: [instalador](descargas/Merxa-Inventario-Instalador-1.4.1.exe) · [portable](descargas/Merxa-Inventario-Portable-1.4.1.exe).
 
 - Entradas, salidas y ajustes
 - Stock y costo promedio
