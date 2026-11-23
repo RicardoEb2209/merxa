@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merxa Inventario · Kardex gratis para tu negocio, sin internet</title>
+<meta name="description" content="Merxa Inventario es un kardex gratis para Windows: entradas, salidas, stock, costo promedio, series, lotes, proyectos y reportes en Excel y PDF. Funciona sin internet y tus datos se quedan en tu computadora.">
+<meta property="og:title" content="Merxa Inventario · Kardex gratis para tu negocio">
+<meta property="og:description" content="Controla tu inventario sin internet y sin pagar. Entradas, salidas, series, proyectos y reportes en Excel y PDF.">
+<meta property="og:image" content="img/entradas.webp">
+<link rel="icon" href="img/favicon.png">
+<style>
+:root { --tinta: #231D2E; --gris: #5A5466; --fondo: #FFFFFF; --suave: #F6F3EF; --naranja: #FD7222; --naranja2: #E54801; --verde: #0AB575; --morado: #9156F9; --crema: #FFF2DB; --borde: #E6E0D8; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif; color: var(--tinta); background: var(--fondo); font-size: 17px; line-height: 1.55; }
+a { color: inherit; }
+.ancho { width: min(1160px, 100% - 40px); margin: 0 auto; }
+header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--borde); }
+header .ancho { display: flex; align-items: center; gap: 28px; height: 68px; }
+header img { height: 34px; display: block; }
+header nav { display: flex; gap: 22px; margin-left: auto; font-weight: 600; font-size: 15.5px; }
+header nav a { text-decoration: none; }
+header nav a:hover { color: var(--naranja2); }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 10px; font-weight: 700; font-size: 17px; text-decoration: none; border: 2px solid transparent; transition: transform .12s ease, background .12s ease; }
+.btn:hover { transform: translateY(-2px); }
+.btn.pri { background: var(--naranja); color: #fff; box-shadow: 0 6px 0 var(--naranja2); }
+.btn.pri:hover { background: #FF8236; }
+.btn.sec { background: #fff; color: var(--tinta); border-color: var(--tinta); }
+.btn small { font-weight: 500; opacity: .85; font-size: 14px; }
+header .btn { padding: 9px 16px; font-size: 15px; box-shadow: 0 4px 0 var(--naranja2); }
+.hero { background: var(--tinta); color: #fff; overflow: hidden; position: relative; }
+.hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(600px 380px at 85% 20%, rgba(145,86,249,.35), transparent 70%), radial-gradient(520px 360px at 10% 100%, rgba(10,181,117,.28), transparent 70%), radial-gradient(500px 300px at 60% 110%, rgba(253,114,34,.30), transparent 70%); }
+.hero .ancho { position: relative; padding: 72px 0 0; display: grid; gap: 40px; }
+.hero h1 { font-size: clamp(38px, 5.6vw, 66px); line-height: 1.05; margin: 0; letter-spacing: -.02em; max-width: 900px; }
+.hero h1 em { font-style: normal; color: var(--naranja); }
+.hero p.bajada { font-size: clamp(18px, 2vw, 22px); color: #E9E4F0; max-width: 760px; margin: 18px 0 0; }
+.botones { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 30px; }
+.hero .btn.sec { background: transparent; color: #fff; border-color: #fff; }
+.notas { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 18px; color: #CFC8DA; font-size: 15px; }
+.notas span::before { content: "✓"; color: var(--verde); font-weight: 800; margin-right: 7px; }
+.captura { margin: 0 auto -1px; width: 100%; height: auto; border-radius: 14px 14px 0 0; border: 6px solid #3A3346; border-bottom: 0; display: block; box-shadow: 0 -10px 60px rgba(0,0,0,.35); }
+section { padding: 84px 0; }
+h2 { font-size: clamp(30px, 3.6vw, 42px); line-height: 1.15; margin: 0 0 14px; letter-spacing: -.015em; }
+.sub { color: var(--gris); font-size: 19px; max-width: 760px; margin: 0 0 40px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.card { background: #fff; border: 2px solid var(--tinta); border-radius: 14px; padding: 24px; box-shadow: 6px 6px 0 var(--c, var(--naranja)); }
+.card h3 { margin: 0 0 6px; font-size: 20px; }
+.card p { margin: 0; color: var(--gris); font-size: 16px; }
+.card .ic { width: 42px; height: 42px; border-radius: 10px; background: var(--c, var(--naranja)); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 20px; margin-bottom: 14px; }
+.c-v { --c: var(--verde); } .c-m { --c: var(--morado); } .c-n { --c: var(--naranja); }
+.franja { background: var(--suave); border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); }
+.dos { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+.dos img { width: 100%; height: auto; border-radius: 12px; border: 2px solid var(--tinta); box-shadow: 8px 8px 0 var(--morado); display: block; }
+ul.lista { padding: 0; margin: 0; list-style: none; display: grid; gap: 12px; }
+ul.lista li { padding-left: 34px; position: relative; font-size: 17.5px; }
+ul.lista li::before { content: ""; position: absolute; left: 0; top: 5px; width: 20px; height: 20px; border-radius: 6px; background: var(--verde); box-shadow: inset 0 0 0 5px #fff, 0 0 0 2px var(--verde); }
+.descarga { background: var(--tinta); color: #fff; }
+.descarga .sub { color: #D9D2E3; }
+.opciones { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; }
+.opcion { background: #2F2840; border: 2px solid #4A4159; border-radius: 16px; padding: 28px; }
+.opcion.rec { border-color: var(--naranja); }
+.opcion .etq { display: inline-block; background: var(--naranja); color: #fff; font-weight: 700; font-size: 13px; padding: 3px 10px; border-radius: 99px; margin-bottom: 10px; }
+.opcion h3 { margin: 0 0 6px; font-size: 24px; }
+.opcion p { color: #D9D2E3; margin: 0 0 20px; font-size: 16px; }
+.opcion .btn.sec { background: transparent; color: #fff; border-color: #fff; }
+.aviso { margin-top: 34px; background: #FFF2DB; color: var(--tinta); border-radius: 14px; padding: 24px 28px; border-left: 8px solid var(--naranja); }
+.aviso h3 { margin: 0 0 8px; font-size: 20px; }
+.aviso ol { margin: 8px 0 0; padding-left: 22px; }
+.aviso p { margin: 0; color: var(--gris); }
+.req { color: #CFC8DA; font-size: 15px; margin-top: 18px; }
+details { border: 2px solid var(--tinta); border-radius: 12px; padding: 0 22px; background: #fff; }
+details + details { margin-top: 12px; }
+summary { cursor: pointer; font-weight: 700; font-size: 18px; padding: 18px 0; list-style: none; }
+summary::after { content: "+"; float: right; font-size: 24px; line-height: 1; color: var(--naranja2); }
+details[open] summary::after { content: "–"; }
+details p { margin: 0 0 18px; color: var(--gris); }
+footer { background: #17121F; color: #BDB5C9; padding: 40px 0; font-size: 15px; }
+footer .ancho { display: flex; flex-wrap: wrap; gap: 18px 36px; align-items: center; }
+footer img { height: 30px; }
+footer a { color: #fff; }
+@media (max-width: 860px) { header nav { display: none; } .dos { grid-template-columns: 1fr; } section { padding: 60px 0; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="ancho">
+    <a href="#" aria-label="Merxa, inicio"><img src="img/merxa-logo.svg" alt="Merxa"></a>
+    <nav><a href="#funciones">Funciones</a><a href="#descargar">Descargar</a><a href="#preguntas">Preguntas</a></nav>
+    <a class="btn pri" href="#descargar">Descargar gratis</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="ancho">
+    <div>
+      <h1>El kardex de tu negocio, <em>gratis</em> y sin internet.</h1>
+      <p class="bajada">Merxa Inventario controla entradas, salidas, stock, costos, series y proyectos. Instálalo en tu computadora y empieza en un minuto. Sin cuentas, sin suscripciones.</p>
+      <div class="botones">
+        <a class="btn pri" href="https://github.com/RicardoEb2209/merxa/releases/download/v1.4.1/Merxa-Inventario-Instalador-1.4.1.exe">Descargar para Windows <small>78 MB</small></a>
+        <a class="btn sec" href="#descargar">Ver opciones</a>
+      </div>
+      <div class="notas"><span>100% gratis</span><span>Funciona sin internet</span><span>Tus datos se quedan en tu PC</span><span>Exporta a Excel y PDF</span></div>
+    </div>
+    <img class="captura" src="img/entradas.webp" alt="Pantalla de Entradas de Merxa Inventario con el formulario de nueva entrada" width="1440" height="900">
+  </div>
+</div>
+
+<section id="funciones">
+  <div class="ancho">
+    <h2>Todo lo que necesita tu almacén</h2>
+    <p class="sub">Hecho para ferreterías, distribuidoras, importadoras, talleres y cualquier negocio que mueve mercadería. Se ve y se usa como los programas de oficina que ya conoces.</p>
+    <div class="grid">
+      <div class="card c-n"><div class="ic">↓</div><h3>Entradas y salidas</h3><p>Registra compras, despachos y ajustes en segundos. Facturas, guías, proveedores y clientes en un solo lugar.</p></div>
+      <div class="card c-v"><div class="ic">S/</div><h3>Stock y costo promedio</h3><p>Stock al día por producto, costo promedio automático, mínimos y valor total del inventario.</p></div>
+      <div class="card c-m"><div class="ic">#</div><h3>Series y lotes</h3><p>Sigue cada equipo por su número de serie, con lote, vencimiento y ubicación. Funciona con lector de código de barras.</p></div>
+      <div class="card c-v"><div class="ic">▣</div><h3>Proyectos y obras</h3><p>Reserva mercadería para cada proyecto, despacha por partes y mira cuánto falta entregar.</p></div>
+      <div class="card c-m"><div class="ic">≡</div><h3>Reportes en Excel y PDF</h3><p>Kardex por producto, stock actual, movimientos entre fechas y por proyecto. Listos para imprimir o enviar.</p></div>
+      <div class="card c-n"><div class="ic">⇪</div><h3>Importa tu Excel</h3><p>Trae tus productos y tu historial desde Excel. Merxa reconoce las columnas y te deja revisar antes de guardar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="franja">
+  <div class="ancho dos">
+    <img src="img/productos.webp" alt="Lista de productos con stock, mínimo, costo promedio y series en almacén" loading="lazy" width="1440" height="900">
+    <div>
+      <h2>Tu información es tuya</h2>
+      <ul class="lista">
+        <li>Todo se guarda en tu computadora. Nada sale a internet.</li>
+        <li>Respaldos automáticos al cerrar, en la carpeta que elijas (también en USB o Drive).</li>
+        <li>Contraseña opcional para abrir, editar o borrar.</li>
+        <li>Papelera para recuperar lo que borraste.</li>
+        <li>Versión portable: llévalo en una USB sin instalar nada.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="franja" style="background:#fff;border-top:0">
+  <div class="ancho dos">
+    <div>
+      <h2>A tu manera</h2>
+      <ul class="lista">
+        <li>13 temas de color: claros, oscuros y de color fuerte.</li>
+        <li>Letra y controles grandes, con alto contraste.</li>
+        <li>Modo Simple para registrar rápido y Avanzado cuando necesitas más detalle.</li>
+        <li>Casillas propias en tus formularios: texto, lista o fecha.</li>
+      </ul>
+    </div>
+    <img src="img/claro.webp" alt="Merxa Inventario con tema claro" loading="lazy" width="1440" height="900">
+  </div>
+</section>
+
+<section id="descargar" class="descarga">
+  <div class="ancho">
+    <h2>Descarga Merxa Inventario</h2>
+    <p class="sub">Versión 1.4.1 · Para Windows 10 y 11 de 64 bits · Gratis</p>
+    <div class="opciones">
+      <div class="opcion rec">
+        <span class="etq">Recomendado</span>
+        <h3>Instalador</h3>
+        <p>Se instala solo para tu usuario, sin permisos de administrador. Crea el acceso en el escritorio y se actualiza sin tocar tus datos.</p>
+        <a class="btn pri" href="https://github.com/RicardoEb2209/merxa/releases/download/v1.4.1/Merxa-Inventario-Instalador-1.4.1.exe">Descargar instalador <small>78 MB</small></a>
+      </div>
+      <div class="opcion">
+        <h3>Portable</h3>
+        <p>Un solo archivo que se abre sin instalar. Guarda sus datos en la misma carpeta, ideal para llevarlo en una USB.</p>
+        <a class="btn sec" href="https://github.com/RicardoEb2209/merxa/releases/download/v1.4.1/Merxa-Inventario-Portable-1.4.1.exe">Descargar portable <small>69 MB</small></a>
+      </div>
+    </div>
+    <div class="aviso">
+      <h3>Windows te va a mostrar un aviso. Es normal.</h3>
+      <p>Merxa es nuevo y todavía no tiene firma digital de pago, por eso Windows lo marca como "aplicación desconocida". Para abrirlo:</p>
+      <ol>
+        <li>En la ventana azul "Windows protegió su PC", haz clic en <b>Más información</b>.</li>
+        <li>Haz clic en <b>Ejecutar de todas formas</b>.</li>
+      </ol>
+      <p style="margin-top:10px">Descárgalo siempre desde esta página para tener la versión original.</p>
+    </div>
+    <p class="req">Al instalar aceptas la <a href="LICENCIA.txt">licencia de uso</a>. ¿Buscas otra versión? <a href="https://github.com/RicardoEb2209/merxa/releases">Ver todas las versiones</a>.</p>
+  </div>
+</section>
+
+<section id="preguntas">
+  <div class="ancho">
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿De verdad es gratis?</summary><p>Sí. Merxa Inventario es gratis para uso personal y comercial, en todas las computadoras de tu negocio. No pide tarjeta ni cuenta.</p></details>
+    <details><summary>¿Necesito internet?</summary><p>No. Funciona completo sin internet. Si hay conexión, solo revisa si salió una versión nueva y te avisa. Puedes apagar ese aviso en Opciones, sección Acerca de.</p></details>
+    <details><summary>¿Dónde se guardan mis datos?</summary><p>En tu computadora, en Documentos\Merxa Inventario (puedes cambiar la carpeta). En la versión portable, junto al programa. Merxa no envía tu información a ningún lado.</p></details>
+    <details><summary>¿Puedo pasar mi kardex de Excel?</summary><p>Sí. En Productos usa Importar: eliges tu archivo de Excel, Merxa reconoce las columnas y revisas todo antes de guardar.</p></details>
+    <details><summary>¿Funciona en Mac o en el celular?</summary><p>Por ahora solo en Windows 10 y 11 de 64 bits.</p></details>
+    <details><summary>Ya usaba Kardex, ¿qué pasa con mis datos?</summary><p>Merxa Inventario es la nueva versión de Kardex. Al instalarlo reemplaza a Kardex y sigue usando tus datos tal como están.</p></details>
+    <details><summary>Encontré un error o tengo una idea</summary><p>Escríbeme a <a href="mailto:ricardo.escobedo.beraun@gmail.com?subject=Comentario%20sobre%20Merxa%20Inventario">ricardo.escobedo.beraun@gmail.com</a> o usa Ayuda, Enviar comentario dentro del programa.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="ancho">
+    <img src="img/merxa-logo-claro.svg" alt="Merxa">
+    <span>Merxa Inventario es parte de la suite Merxa. Pronto: Merxa Cotizador y Merxa Compras.</span>
+    <span>© 2026 Ricardo Escobedo Beraun · <a href="LICENCIA.txt">Licencia</a> · <a href="mailto:ricardo.escobedo.beraun@gmail.com">Contacto</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
