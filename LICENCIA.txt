@@ -1,29 +1,29 @@
 MERXA INVENTARIO
 Contrato de licencia de uso (programa gratuito)
-Versión 1.0 del 23 de noviembre de 2026
+Versión 1.1 del 24 de noviembre de 2026
 
 Titular: Ricardo Escobedo Beraun, Lima, Perú
 Contacto: ricardo.escobedo.beraun@gmail.com
 
-Al instalar, copiar o usar Merxa Inventario ("el programa") aceptas este contrato. Si no estás de acuerdo, no lo instales ni lo uses.
+Al instalar, copiar o usar Merxa Inventario ("el programa"), el usuario acepta este contrato. Si no está de acuerdo, no debe instalarlo ni usarlo.
 
 1. Licencia
-Se te concede una licencia gratuita, no exclusiva, no transferible y revocable para instalar y usar el programa en las computadoras que necesites, para fines personales o comerciales, incluido su uso dentro de tu negocio o empresa.
+Se concede al usuario una licencia gratuita, no exclusiva, no transferible y revocable para instalar y usar el programa en las computadoras que necesite, para fines personales o comerciales, incluido su uso dentro de su negocio o empresa.
 
 2. Propiedad
-El programa, su código, diseño, nombre, logotipos e íconos son propiedad de Ricardo Escobedo Beraun y están protegidos por las normas de derecho de autor del Perú (Decreto Legislativo 822) y por los tratados internacionales. Esta licencia no te transfiere ningún derecho de propiedad. El nombre Merxa y su logotipo no pueden usarse sin autorización.
+El programa, su código, diseño, nombre, logotipos e íconos son propiedad de Ricardo Escobedo Beraun y están protegidos por las normas de derecho de autor del Perú (Decreto Legislativo 822) y por los tratados internacionales. Esta licencia no transfiere al usuario ningún derecho de propiedad. El nombre Merxa y su logotipo no pueden usarse sin autorización.
 
 3. Lo que no está permitido
-Sin autorización escrita del titular no puedes:
+Sin autorización escrita del titular, el usuario no puede:
 a) vender, alquilar o sublicenciar el programa, ni cobrar por él;
 b) modificarlo, traducirlo, descompilarlo, desensamblarlo, extraer su código o aplicarle ingeniería inversa, salvo en lo que la ley lo permita expresamente;
 c) distribuirlo modificado o incluirlo dentro de otro producto;
 d) quitar o cambiar los avisos de autoría, la marca o este contrato;
 e) presentarlo como obra propia.
-Sí puedes compartir el instalador original, sin cambios y sin cobrar. Se recomienda descargarlo siempre de la página oficial.
+El usuario sí puede compartir el instalador original, sin cambios y sin cobrar. Se recomienda descargarlo siempre de la página oficial.
 
-4. Tus datos
-Todo lo que registras se guarda en tu computadora. El programa no envía la información de tu negocio a ningún servidor. Si la computadora tiene internet, el programa solo consulta en la página oficial de descargas si hay una versión nueva, sin enviar datos de tu negocio. Puedes desactivarlo en Opciones, sección Acerca de. Eres responsable de tus datos y de hacer respaldos.
+4. Datos del usuario
+Toda la información que el usuario registra se guarda en su computadora. El programa no envía la información del negocio a ningún servidor. Si la computadora tiene conexión a internet, el programa solo consulta en la página oficial de descargas si existe una versión nueva, sin enviar datos del negocio. Esta consulta puede desactivarse en Opciones, sección Acerca de. El usuario es responsable de sus datos y de sus respaldos.
 
 5. Sin garantía
 El programa se entrega "tal cual", sin garantías de ningún tipo, expresas o implícitas, incluidas las de funcionamiento sin errores, comerciabilidad o idoneidad para un fin determinado.
@@ -38,7 +38,7 @@ El programa incluye componentes de código abierto con sus propias licencias, qu
 El titular puede publicar versiones nuevas y modificar este contrato. Rige el contrato que acompaña a cada versión del programa.
 
 9. Terminación
-La licencia termina automáticamente si incumples este contrato. En ese caso debes dejar de usar el programa y eliminar sus copias.
+La licencia termina automáticamente si el usuario incumple este contrato. En ese caso, deberá dejar de usar el programa y eliminar sus copias.
 
 10. Ley aplicable
 Este contrato se rige por las leyes de la República del Perú. Cualquier controversia se somete a los jueces y tribunales de Lima.
