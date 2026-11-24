@@ -1,14 +1,21 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-PE">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Merxa Inventario · Control de inventario y kardex para almacenes</title>
-<meta name="description" content="Merxa Inventario es un software gratuito de control de inventario y kardex para almacenes: entradas, salidas, stock, costo promedio, lotes, series y reportes en Excel y PDF. Funciona sin conexión a internet y la información se almacena en su equipo.">
-<meta property="og:title" content="Merxa Inventario · Control de inventario para almacenes">
-<meta property="og:description" content="Software gratuito de control de inventario. Entradas, salidas, stock, lotes, series y reportes en Excel y PDF, sin conexión a internet.">
+<title>Kardex gratis para almacenes · Merxa Inventario</title>
+<meta name="description" content="Merxa Inventario es un programa de kardex gratis para Windows: entradas, salidas, stock, costo promedio, lotes, series y kardex por producto en Excel y PDF. Funciona sin internet y la información se almacena en su equipo.">
+<meta property="og:title" content="Kardex gratis para almacenes · Merxa Inventario">
+<meta property="og:description" content="Programa de kardex gratis para Windows. Entradas, salidas, stock, costo promedio, lotes, series y reportes en Excel y PDF, sin internet.">
 <meta property="og:image" content="img/entradas-almacen.webp">
 <link rel="icon" href="img/favicon.png">
+<link rel="canonical" href="https://ricardoeb2209.github.io/merxa/">
+<meta property="og:url" content="https://ricardoeb2209.github.io/merxa/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PE">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Merxa Inventario","alternateName":"Kardex Merxa","description":"Programa de kardex gratis para almacenes: entradas, salidas, stock, costo promedio, lotes, series y reportes en Excel y PDF.","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"1.5.0","inLanguage":"es","url":"https://ricardoeb2209.github.io/merxa/","downloadUrl":"https://github.com/RicardoEb2209/merxa/raw/main/descargas/Merxa-Inventario-Instalador-1.5.0.exe","offers":{"@type":"Offer","price":"0","priceCurrency":"PEN"},"author":{"@type":"Person","name":"Ricardo Escobedo Beraun"}}
+</script>
 <style>
 :root { --tinta: #231D2E; --gris: #5A5466; --fondo: #FFFFFF; --suave: #F6F3EF; --naranja: #FD7222; --naranja2: #E54801; --verde: #0AB575; --morado: #9156F9; --crema: #FFF2DB; --borde: #E6E0D8; }
 * { box-sizing: border-box; }
@@ -95,13 +102,13 @@ footer a { color: #fff; }
 <div class="hero">
   <div class="ancho">
     <div>
-      <h1>Control de inventario para su almacén, <em>sin costo</em>.</h1>
-      <p class="bajada">Merxa Inventario registra entradas, salidas, stock, costos, lotes y series. Se instala en pocos minutos, funciona sin conexión a internet y no requiere cuentas ni suscripciones.</p>
+      <h1>El kardex de su almacén, <em>gratis</em>.</h1>
+      <p class="bajada">Merxa Inventario es un programa de kardex para Windows que registra entradas, salidas, stock, costo promedio, lotes y series. Se instala en pocos minutos, funciona sin conexión a internet y no requiere cuentas ni suscripciones.</p>
       <div class="botones">
         <a class="btn pri" href="https://github.com/RicardoEb2209/merxa/raw/main/descargas/Merxa-Inventario-Instalador-1.5.0.exe">Descargar para Windows <small>78 MB</small></a>
         <a class="btn sec" href="#descargar">Ver opciones</a>
       </div>
-      <div class="notas"><span>Software gratuito</span><span>Funciona sin internet</span><span>Información almacenada en su equipo</span><span>Reportes en Excel y PDF</span></div>
+      <div class="notas"><span>Kardex gratuito</span><span>Funciona sin internet</span><span>Información almacenada en su equipo</span><span>Reportes en Excel y PDF</span></div>
     </div>
     <img class="captura" src="img/entradas-almacen.webp" alt="Merxa Inventario: entradas de una distribuidora con proveedor, lote, vencimiento y el formulario de nueva entrada" width="1440" height="900">
   </div>
@@ -113,7 +120,7 @@ footer a { color: #fff; }
     <p class="sub">Diseñado para distribuidoras, importadoras y empresas con almacén que compran, almacenan y despachan mercadería. Su interfaz sigue la lógica de los programas de oficina que su equipo ya conoce.</p>
     <div class="grid">
       <div class="card c-n"><div class="ic">↓</div><h3>Entradas y salidas</h3><p>Registro de compras, despachos y ajustes con factura, guía de remisión, proveedor y cliente.</p></div>
-      <div class="card c-v"><div class="ic">S/</div><h3>Stock y costo promedio</h3><p>Stock actualizado por producto, costo promedio automático, stock mínimo y valor total del inventario.</p></div>
+      <div class="card c-v"><div class="ic">S/</div><h3>Kardex valorizado</h3><p>Kardex por producto con costo promedio automático, stock actualizado, stock mínimo y valor total del inventario.</p></div>
       <div class="card c-m"><div class="ic">#</div><h3>Lotes, vencimientos y series</h3><p>Control de lotes, fechas de vencimiento y números de serie, compatible con lector de código de barras.</p></div>
       <div class="card c-v"><div class="ic">▣</div><h3>Pedidos y proyectos</h3><p>Reserva de mercadería por pedido u obra, con despacho por partes. Función opcional, activable desde Opciones.</p></div>
       <div class="card c-m"><div class="ic">≡</div><h3>Reportes en Excel y PDF</h3><p>Kardex por producto, stock actual, movimientos entre fechas y movimientos por proyecto, listos para imprimir o enviar.</p></div>
@@ -187,11 +194,12 @@ footer a { color: #fff; }
 <section id="preguntas">
   <div class="ancho">
     <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Qué es un kardex?</summary><p>Es el registro de cada entrada y salida de un producto, con su saldo de unidades y su costo. Permite conocer el stock real y el valor del inventario en cualquier fecha. Merxa Inventario lo genera de forma automática a partir de las entradas y salidas registradas, con el método de costo promedio.</p></details>
     <details><summary>¿Merxa Inventario es gratuito?</summary><p>Sí. Su uso es gratuito para fines personales y comerciales, en todos los equipos de su empresa. No requiere tarjeta ni registro.</p></details>
     <details><summary>¿Requiere conexión a internet?</summary><p>No. Funciona por completo sin conexión. Si el equipo está conectado, solo verifica la disponibilidad de nuevas versiones. Esta función puede desactivarse en Opciones, sección Acerca de.</p></details>
     <details><summary>¿Dónde se almacena la información?</summary><p>En su equipo, en Documentos\Merxa Inventario. La carpeta puede cambiarse desde Opciones. En la versión portable, la información se guarda junto al programa. Merxa no envía su información a ningún servidor.</p></details>
     <details><summary>¿Cómo funcionan los respaldos?</summary><p>Al cerrar el programa se guarda un respaldo automático en la carpeta Respaldos, junto a la información. La barra inferior muestra la fecha y hora del último respaldo. Desde Opciones puede elegir otra carpeta, la frecuencia y la cantidad de copias que se conservan.</p></details>
-    <details><summary>¿Es posible migrar un kardex desde Excel?</summary><p>Sí. En Productos, la opción Importar reconoce las columnas de su archivo de Excel y permite revisar la información antes de registrarla.</p></details>
+    <details><summary>¿Es posible migrar un kardex desde Excel?</summary><p>Sí. En Productos, la opción Importar reconoce las columnas de su kardex en Excel y permite revisar la información antes de registrarla. El kardex por producto también se exporta a Excel y PDF.</p></details>
     <details><summary>¿Está disponible para Mac o dispositivos móviles?</summary><p>Por el momento, solo para Windows 10 y 11 de 64 bits.</p></details>
     <details><summary>Utilizaba Kardex. ¿Qué sucede con mi información?</summary><p>Merxa Inventario es la nueva versión de Kardex. Al instalarse, reemplaza a Kardex y conserva la información existente.</p></details>
     <details><summary>Reporte de errores y sugerencias</summary><p>Puede escribir a <a href="mailto:ricardo.escobedo.beraun@gmail.com?subject=Comentario%20sobre%20Merxa%20Inventario">ricardo.escobedo.beraun@gmail.com</a> o utilizar la opción Enviar comentario, en Opciones, sección Acerca de.</p></details>
